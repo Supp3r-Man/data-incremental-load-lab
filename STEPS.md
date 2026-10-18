@@ -16,7 +16,7 @@
 8. **Ran the simulation** (`python -m incload demo`) and looked at the numbers before writing any seeded assertions, so the assertions describe what the data shows (orderings, zeros) rather than copying exact counts.
 9. **Wrote 45 tests** in five files: simulator (6), strategy behaviour on tiny hand-built tables (16), atomicity (7), partition overwrite (6), seeded comparison with the ground truth (10).
 10. **Mutation-checked** 8 behaviours with a script that copies the repo, applies one literal replace, and requires pytest to fail. All 8 killed on the first run.
-11. **Wrote the README and this file**, then committed locally. Not pushed; CI has not run.
+11. **Wrote the README and this file**, then committed locally. Pushed to both accounts; CI passed on Python 3.11 and 3.13.
 
 Problems and choices along the way:
 - DuckDB's `executemany` rejects an empty list, so a simulator config with no late rows crashed; the first test run caught it and `_insert` now skips empty batches.
